@@ -6,16 +6,13 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:03:52 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/11 19:24:24 by nforay           ###   ########.fr       */
+/*   Updated: 2021/01/13 02:16:30 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIEEVENT_HPP
 # define ZOMBIEEVENT_HPP
 
-# include <iostream>
-# include <string>
-# include <ctime>
 # include "Zombie.hpp"
 
 class ZombieEvent

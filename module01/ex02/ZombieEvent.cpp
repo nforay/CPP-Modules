@@ -6,12 +6,14 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:03:48 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/11 19:32:46 by nforay           ###   ########.fr       */
+/*   Updated: 2021/01/13 02:13:52 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
+#include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -66,7 +68,8 @@ Zombie	*ZombieEvent::randomChump()
 {
 	Zombie *newzombie;
 
-	newzombie = new Zombie(names_pool[rand() % 10], type);
+	std::srand(std::time(0));
+	newzombie = new Zombie(names_pool[std::rand() % 10], type);
 	return (newzombie);
 }
 

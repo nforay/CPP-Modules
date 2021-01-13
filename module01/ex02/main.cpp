@@ -6,11 +6,11 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 01:14:11 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/12 02:03:32 by nforay           ###   ########.fr       */
+/*   Updated: 2021/01/13 02:18:59 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
+#include <iostream>
 #include "ZombieEvent.hpp"
 #include "Zombie.hpp"
 
@@ -24,14 +24,11 @@ int		main(void)
 {
 	SpawnBob();
 	ZombieEvent Spawner;
-	Zombie *zombies[3];
+	Zombie *zombie;
 
 	Spawner.setZombieType("runner");
-	for (int i = 0; i < 3; i++)
-		zombies[i] = Spawner.randomChump();
-	for (int i = 0; i < 3; i++)
-		zombies[i]->announce();
-	for (int i = 0; i < 3; i++)
-		delete zombies[i];
+	zombie = Spawner.randomChump();
+	zombie->announce();
+	delete zombie;
 	return (0);
 }
