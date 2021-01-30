@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:08:37 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/29 20:31:59 by nforay           ###   ########.fr       */
+/*   Updated: 2021/01/30 16:18:28 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ Character &				Character::operator=(Character const &rhs)
 	return *this;
 }
 
-std::ostream &			operator<<(std::ostream &o, Character const &i)
+std::ostream &			operator<<(std::ostream &o, ICharacter const &i)
 {
 	o << "This is the character named " << i.getName() << std::endl;
 	return o;
@@ -78,7 +78,7 @@ void Character::equip(AMateria* m)
 		{
 			if (this->m_inv[i] == NULL)
 			{
-				this->m_inv[this->m_nbrmat] = m;
+				this->m_inv[i] = m;
 				this->m_nbrmat++;
 				return ;
 			}

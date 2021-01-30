@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 18:40:51 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/29 20:11:52 by nforay           ###   ########.fr       */
+/*   Updated: 2021/01/30 16:28:47 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,25 @@ int main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 
+	AMateria* tmp2;
+	tmp2 = tmp->clone();
+	std::cout << "Teaching a copy of my Cure to bob and using it on himself." << std::endl;
+	bob->equip(tmp2);
+	bob->use(0, *bob);
+	std::cout << "This is my Cure Materia:" << std::endl;
+	std::cout << *tmp;
+	std::cout << "This is bob's Cure Materia, it now have higher XP:" << std::endl;
+	std::cout << *tmp2;
+	std::cout << "Bob forgets how to use Cure but try to use it anyway:" << std::endl;
+	bob->unequip(0);
+	bob->use(0, *bob);
+	std::cout << "* Nothing happened *" << std::endl;
+
+	delete tmp2;
+
 	delete bob;
 	delete me;
 	delete src;
 
 	return 0;
 }
-
-//$> clang++ -W -Wall -Werror *.cpp
-//$> ./a.out | cat -e
-//* shoots an ice bolt at bob *$
-//* heals bob's wounds *$

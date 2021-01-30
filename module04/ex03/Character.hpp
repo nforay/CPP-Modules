@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:08:37 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/29 19:54:18 by nforay           ###   ########.fr       */
+/*   Updated: 2021/01/30 16:18:46 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ class Character : public ICharacter
 
 };
 
-std::ostream &			operator<<(std::ostream &o, Character const &i);
+std::ostream &			operator<<(std::ostream &o, ICharacter const &i);
 
 #endif /* ******************************************************* CHARACTER_H */

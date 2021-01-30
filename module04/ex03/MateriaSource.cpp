@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 20:09:19 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/29 20:32:32 by nforay           ###   ########.fr       */
+/*   Updated: 2021/01/30 16:25:39 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ MateriaSource &		MateriaSource::operator=(MateriaSource const &rhs)
 	return *this;
 }
 
-std::ostream &		operator<<(std::ostream &o, MateriaSource const &i)
+std::ostream &		operator<<(std::ostream &o, IMateriaSource const &i)
 {
 	(void)i;
 	o << "This is a MateriaSource" << std::endl;

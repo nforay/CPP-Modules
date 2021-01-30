@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 20:09:19 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/29 19:43:31 by nforay           ###   ########.fr       */
+/*   Updated: 2021/01/30 16:25:41 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ class MateriaSource : public IMateriaSource
 
 };
 
-std::ostream &			operator<<( std::ostream & o, MateriaSource const & i );
+std::ostream &			operator<<( std::ostream & o, IMateriaSource const & i );
 
 #endif /* *************************************************** MATERIASOURCE_H */
