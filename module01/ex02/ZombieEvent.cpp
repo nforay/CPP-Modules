@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:03:48 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/13 02:13:52 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/04 17:09:41 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ Zombie	*ZombieEvent::randomChump()
 
 	std::srand(std::time(0));
 	newzombie = new Zombie(names_pool[std::rand() % 10], type);
+	newzombie->announce();
 	return (newzombie);
 }
 

@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 01:14:11 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/13 02:18:59 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/04 17:09:29 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		main(void)
 
 	Spawner.setZombieType("runner");
 	zombie = Spawner.randomChump();
-	zombie->announce();
 	delete zombie;
 	return (0);
 }

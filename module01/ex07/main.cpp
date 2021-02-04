@@ -6,16 +6,22 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 18:54:00 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/15 16:15:56 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/04 17:06:50 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <errno.h>
 
 int	main(int argc, char **argv)
 {
+	if (argc != 4)
+	{
+		std::cout << "./replace <file> <old-text> <new-text>" << std::endl;
+		return (1);
+	}
 	std::ifstream		inputfile;
 	std::ofstream		outputfile;
 	std::string			linecontent;
@@ -24,7 +30,7 @@ int	main(int argc, char **argv)
 	const std::string	s2(argv[3]);
 	std::size_t			pos = 0;
 
-	if (argc != 4 || filename == ".replace" || !s1.length() || !s2.length())
+	if (filename == ".replace" || !s1.length() || !s2.length())
 	{
 		std::cout << "./replace <file> <old-text> <new-text>" << std::endl;
 		return (1);
