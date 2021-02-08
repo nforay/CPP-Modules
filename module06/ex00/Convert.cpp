@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 18:48:46 by nforay            #+#    #+#             */
-/*   Updated: 2021/02/07 05:05:12 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/08 17:21:01 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Convert::Convert(std::string const &input) : m_char(0), m_charflags(0), m_int(0), m_intflags(0), m_float(0.0f), m_floatflags(0), m_double(0.0), m_doubleflags(0)
+Convert::Convert(std::string const &input) : m_char(0), m_charflags(0), m_int(0),
+		m_intflags(0), m_float(0.0f), m_floatflags(0),	m_double(0.0), m_doubleflags(0)
 {
 	std::size_t	i = 0;
 	int			f = 0;
@@ -47,15 +48,13 @@ Convert::Convert(std::string const &input) : m_char(0), m_charflags(0), m_int(0)
 		convChar(input);
 	}
 	else if (input == "-inff" || input == "+inff" || input == "-inf" || input == "+inf")
-		convDouble(input);
+		convNumber(input);
 	else if (isdigit(input[0]) || (input[0] == '-' && isdigit(input[1])))
 	{
 		while (isprint(input[++i]))
 		{
 			if (!dot && input[i] == '.' && (i + 1) != input.length())
-			{
 				dot++;
-			}
 			else if (dot && input[i] == 'f' && !f)
 				f++;
 			else if (isdigit(input[i]) && !f)
@@ -67,12 +66,7 @@ Convert::Convert(std::string const &input) : m_char(0), m_charflags(0), m_int(0)
 		}
 		if (i != input.length())
 			throw Convert::NotDisplayableException();
-		if (f)
-			convDouble(input);
-		else if (dot)
-			convDouble(input);
-		else
-			convDouble(input);
+		convNumber(input);
 	}
 	else
 	{
@@ -80,12 +74,10 @@ Convert::Convert(std::string const &input) : m_char(0), m_charflags(0), m_int(0)
 	}
 }
 
-Convert::Convert(const Convert &src) : m_char(src.m_char), m_int(src.m_int), m_float(src.m_float), m_double(src.m_double)
+Convert::Convert(const Convert &src) : m_char(src.m_char), m_charflags(src.m_charflags),
+	m_int(src.m_int), m_intflags(src.m_intflags), m_float(src.m_float),
+	m_floatflags(src.m_floatflags), m_double(src.m_double), m_doubleflags(src.m_doubleflags)
 {
-	this->m_charflags = src.m_charflags;
-	this->m_intflags = src.m_intflags;
-	this->m_floatflags = src.m_floatflags;
-	this->m_doubleflags = src.m_doubleflags;
 }
 
 /*
@@ -165,7 +157,7 @@ void 					Convert::convChar(std::string const &input)
 	m_double = static_cast<double>(m_char);
 }
 
-void 					Convert::convDouble(std::string const &input)
+void 					Convert::convNumber(std::string const &input)
 {
 	m_double = strtod(input.c_str(), NULL);
 

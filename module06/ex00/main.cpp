@@ -6,13 +6,10 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 21:30:58 by nforay            #+#    #+#             */
-/*   Updated: 2021/02/07 04:56:47 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/07 05:09:32 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <sstream>
-#include <string>
 #include "Convert.hpp"
 
 int	main(int argc, char **argv)

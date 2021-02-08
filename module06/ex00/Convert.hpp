@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 18:48:47 by nforay            #+#    #+#             */
-/*   Updated: 2021/02/07 05:05:20 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/08 17:03:36 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ class Convert
 		char				m_doubleflags;
 
 		void 				convChar(std::string const &input);
-		void 				convDouble(std::string const &input);
+		void 				convNumber(std::string const &input);
 
 };
 
