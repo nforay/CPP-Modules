@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:08:37 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/30 16:18:28 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 18:29:21 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ Character::Character(const std::string &name) : m_name(name), m_inv(new AMateria
 Character::Character(const Character &src) : m_name(src.m_name), m_inv(new AMateria*[4]), m_nbrmat(src.m_nbrmat)
 {
 	//std::cout << "Character copy constructor called." << std::endl;
-	for (int i = 0; i < 4; i++)
-		this->m_inv[i] = src.m_inv[i];
+	for (int i = 0; i < this->m_nbrmat; i++)
+		this->m_inv[i] = src.m_inv[i]->clone();
 }
 
 /*
@@ -51,10 +51,12 @@ Character &				Character::operator=(Character const &rhs)
 {
 	if (this != &rhs)
 	{
+		for (int i = 0; i < this->m_nbrmat; i++)
+			delete this->m_inv[i];
 		this->m_name = rhs.getName();
 		this->m_nbrmat = rhs.m_nbrmat;
-		for (int i = 0; i < 4; i++)
-			this->m_inv[i] = rhs.m_inv[i];
+		for (int i = 0; i < this->m_nbrmat; i++)
+			this->m_inv[i] = rhs.m_inv[i]->clone();
 	}
 	return *this;
 }
