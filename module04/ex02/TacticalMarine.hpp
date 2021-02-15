@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:34:30 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/27 17:13:14 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 15:07:21 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class TacticalMarine : public ISpaceMarine
 
 		TacticalMarine();
 		TacticalMarine(TacticalMarine const &src);
-		~TacticalMarine();
+		virtual ~TacticalMarine();
 
 		TacticalMarine &		operator=(TacticalMarine const &rhs);
 

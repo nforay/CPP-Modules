@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:45:31 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/27 18:28:52 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 17:16:44 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,10 @@ Squad::Squad() : m_unitcount(0), m_unitarray(new ISpaceMarine*[this->m_unitcount
 {
 }
 
-Squad::Squad(const Squad &src) : m_unitcount(src.m_unitcount), m_unitarray(0)
+Squad::Squad(const Squad &src) : m_unitcount(src.m_unitcount), m_unitarray(new ISpaceMarine*[src.m_unitcount])
 {
-	if (src.m_unitcount > 0)
-	{
-		m_unitarray = new ISpaceMarine*[src.m_unitcount];
-		for (int i = 0; i < src.m_unitcount; i++)
-			m_unitarray[i] = src.m_unitarray[i]->clone();
-	}
+	for (int i = 0; i < src.m_unitcount; i++)
+		m_unitarray[i] = src.m_unitarray[i]->clone();
 }
 
 /*
@@ -49,11 +45,17 @@ Squad::~Squad()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Squad &				Squad::operator=( Squad const & rhs )
+Squad &				Squad::operator=(ISquad const &rhs)
 {
-	if ( this != &rhs )
+	if (this != &rhs)
 	{
-		*this = rhs;
+		for (int i = 0; i < this->m_unitcount; i++)
+			delete this->m_unitarray[i];
+		delete [] this->m_unitarray;
+		this->m_unitcount = rhs.getCount();
+		this->m_unitarray = new ISpaceMarine*[this->m_unitcount];
+		for (int i = 0; i < this->m_unitcount; i++)
+			this->m_unitarray[i] = rhs.getUnit(i)->clone();
 	}
 	return *this;
 }

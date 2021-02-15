@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:17:21 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/27 18:29:20 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 17:14:18 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,28 @@ int main()
 		cur->rangedAttack();
 		cur->meleeAttack();
 	}
-	std::cout << "There are " << vlc->getCount() << " element(s) in the squad." << std::endl;
+	std::cout << "\nThere are " << vlc->getCount() << " element(s) in the squad." << std::endl;
 	std::cout << "Adding NULL..." << std::endl;
 	vlc->push(NULL);
-	std::cout << "There are " << vlc->getCount() << " element(s) in the squad." << std::endl;
+	std::cout << "\nThere are " << vlc->getCount() << " element(s) in the squad." << std::endl;
 	std::cout << "Adding bob again..." << std::endl;
 	vlc->push(bob);
-	std::cout << "There are " << vlc->getCount() << " element(s) in the squad." << std::endl;
+	std::cout << "\nThere are " << vlc->getCount() << " element(s) in the squad." << std::endl;
 	std::cout << "Adding a clone from bob..." << std::endl;
 	vlc->push(bob->clone());
-	std::cout << "There are " << vlc->getCount() << " element(s) in the squad." << std::endl;
-	std::cout << "Deleting squad." << std::endl;
+	std::cout << "\nThere are " << vlc->getCount() << " element(s) in the squad." << std::endl;
+
+	std::cout << "\nMaking new squad alpha with jack inside." << std::endl;
+	Squad *alpha = new Squad;
+	ISpaceMarine* jack = new TacticalMarine;
+	alpha->push(jack);
+	std::cout << "Number of units in alpha: " << alpha->getCount() << std::endl;
+	std::cout << "Assigning alpha to vlc." << std::endl;
+	*alpha = *vlc;
+	std::cout << "Number of units in alpha: " << alpha->getCount() << std::endl;
+
+	std::cout << "Deleting squads." << std::endl;
+	delete alpha;
 	delete vlc;
 
 	return 0;
