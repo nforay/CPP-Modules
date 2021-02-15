@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 21:08:24 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/26 16:25:58 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 14:56:07 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class PowerFist : public AWeapon
 
 		PowerFist();
 		PowerFist(PowerFist const &src);
-		~PowerFist();
+		virtual ~PowerFist();
 
 		virtual void	attack() const;
 

@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 19:52:50 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/26 16:53:25 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 14:58:44 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,8 @@ int main()
 	me->attack(c);
 	std::cout << *me;
 
+	delete me;
+	delete pr;
+	delete pf;
 	return 0;
 }

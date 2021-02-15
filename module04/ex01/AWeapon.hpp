@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 19:56:08 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/25 21:37:14 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 14:24:12 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AWeapon
 
 		AWeapon(std::string const &name, int apcost, int damage);
 		AWeapon(AWeapon const &src);
-		~AWeapon();
+		virtual ~AWeapon();
 
 		AWeapon &		operator=(AWeapon const &rhs);
 

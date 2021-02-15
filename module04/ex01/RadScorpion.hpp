@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 01:09:41 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/26 15:45:12 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 14:56:13 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class RadScorpion : public Enemy
 
 		RadScorpion();
 		RadScorpion(RadScorpion const &src);
-		~RadScorpion();
+		virtual ~RadScorpion();
 
 		virtual void		takeDamage(int amount);
 

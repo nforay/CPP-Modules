@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 21:08:15 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/26 16:26:08 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 14:51:28 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class PlasmaRifle : public AWeapon
 
 		PlasmaRifle();
 		PlasmaRifle(PlasmaRifle const &src);
-		~PlasmaRifle();
+		virtual ~PlasmaRifle();
 
 		virtual void		attack() const;
 
