@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 18:43:15 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/25 19:24:04 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 14:59:56 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Sheep : public Peon
 
 		Sheep(std::string const &name);
 		Sheep(Sheep const &src);
-		~Sheep();
+		virtual ~Sheep();
 
 		Sheep &		operator=(Sheep const &rhs);
 

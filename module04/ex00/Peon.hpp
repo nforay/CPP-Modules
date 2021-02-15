@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:35:58 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/25 19:23:06 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 14:59:52 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Peon : public Victim
 
 		Peon(std::string const &name);
 		Peon(Peon const &src);
-		~Peon();
+		virtual ~Peon();
 
 		Peon &			operator=(Peon const &rhs);
 

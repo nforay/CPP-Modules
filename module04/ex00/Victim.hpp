@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:35:50 by nforay            #+#    #+#             */
-/*   Updated: 2021/01/25 19:22:31 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/15 14:59:47 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Victim
 
 		Victim(std::string const &name);
 		Victim(Victim const &src);
-		~Victim();
+		virtual ~Victim();
 
 		Victim &		operator=(Victim const &rhs);
 
