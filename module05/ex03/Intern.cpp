@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 18:38:03 by nforay            #+#    #+#             */
-/*   Updated: 2021/02/04 14:25:36 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/16 20:05:35 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,10 @@ Form*	Intern::makeForm(std::string const &name, std::string const &target)
 	for (int i = 0; i < 3; i++)
 	{
 		if (name == this->m_names[i])
+		{
+			std::cout << "Intern creates " << name << std::endl;
 			return ((functptr[i])(target));
+		}
 	}
 	throw Intern::UnknownFormException();
 }
