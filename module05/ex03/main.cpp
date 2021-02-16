@@ -6,7 +6,7 @@
 /*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 17:09:30 by nforay            #+#    #+#             */
-/*   Updated: 2021/02/04 14:32:32 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/16 20:11:22 by nforay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,30 @@ int	main(void)
 	try
 	{
 		scf = lestagiaire.makeForm("shrubbery request", "CentralPark");
+		scf->beSigned(mac);
+		mac.executeForm(*scf);
+		delete scf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		scf = lestagiaire.makeForm("robotomy request", "Prumt");
+		scf->beSigned(mac);
+		mac.executeForm(*scf);
+		delete scf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		scf = lestagiaire.makeForm("presidential request", "Norminet");
 		scf->beSigned(mac);
 		mac.executeForm(*scf);
 		delete scf;
