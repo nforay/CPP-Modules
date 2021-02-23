@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 21:56:44 by nforay            #+#    #+#             */
-/*   Updated: 2021/02/14 23:18:59 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/23 09:32:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,15 +72,21 @@ void			Span::addNumbers(std::vector<int>const &src)
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-unsigned int				Span::shortestSpan(void)
+int							Span::shortestSpan(void)
 {
 	if (m_ints.size() < 2)
 		throw Span::NotEnoughException();
 	std::sort(m_ints.begin(), m_ints.end());
-	return (*(m_ints.begin() + 1) - *m_ints.begin());
+	std::vector<int>::iterator			it = m_ints.begin();
+	std::vector<int>::const_iterator	end = m_ints.end();
+	int									shortest = (*(it + 1) - *it);
+	while ((++it + 1) != end)
+		if ((*(it + 1) - *it) < shortest)
+			shortest = (*(it + 1) - *it);
+	return (shortest);
 }
 
-unsigned int				Span::longestSpan(void)
+int							Span::longestSpan(void)
 {
 	if (m_ints.size() < 2)
 		throw Span::NotEnoughException();

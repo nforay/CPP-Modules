@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 21:56:44 by nforay            #+#    #+#             */
-/*   Updated: 2021/02/14 23:18:54 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/23 09:45:31 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class Span
 		void					addNumber(int number);
 		void					addNumbers(std::vector<int>const &src);
 
-		unsigned int			shortestSpan(void);
-		unsigned int			longestSpan(void);
+		int						shortestSpan(void);
+		int						longestSpan(void);
 		unsigned int			GetNbrInts(void) const;
 		std::vector<int>const &	GetVector(void) const;
 
@@ -62,6 +62,8 @@ class Span
 		};
 
 	private:
+
+		Span(void) {}
 
 		unsigned int		m_nbrints;
 		std::vector<int>	m_ints;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 23:44:31 by nforay            #+#    #+#             */
-/*   Updated: 2021/02/15 01:41:03 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/23 08:43:00 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,18 @@ int	main(void)
 {
 	MutantStack<int>	mstack;
 
-	mstack.push(5);
-	mstack.push(17);
+	mstack.push(33);
+	mstack.push(84);
+	mstack.push(0);
 
-	std::cout << mstack.top() << std::endl;
+	std::cout << "Top: " << mstack.top() << std::endl;
 
 	mstack.pop();
 
-	std::cout << mstack.size() << std::endl;
-
-	mstack.push(3);
-	mstack.push(5);
-	mstack.push(737);
-
-	mstack.push(0);
+	std::cout << "Size: " << mstack.size() << std::endl;
+	mstack.push(83);
+	mstack.push(69);
+	mstack.push(84);
 
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -45,8 +43,23 @@ int	main(void)
 		++it;
 	}
 	std::stack<int>	s(mstack);
-
-	//need more tests
+	std::cout << "Size: " << s.size() << std::endl;
+	MutantStack<char>	c_mstack;
+	std::cout << "------------" << std::endl;
+	size_t i = s.size();
+	while (i--)
+	{
+		c_mstack.push(s.top());
+		s.pop();
+	}
+	std::cout << "Size: " << c_mstack.size() << std::endl;
+	MutantStack<char>::iterator c_itb = c_mstack.begin();
+	MutantStack<char>::iterator c_ite = c_mstack.end();
+	while(c_itb != c_ite)
+	{
+		std::cout << *c_itb << std::endl;
+		++c_itb;
+	}
 
 	return 0;
 }

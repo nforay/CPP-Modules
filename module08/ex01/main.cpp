@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nforay <nforay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 21:56:35 by nforay            #+#    #+#             */
-/*   Updated: 2021/02/14 23:18:53 by nforay           ###   ########.fr       */
+/*   Updated: 2021/02/23 09:38:15 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	main(void)
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 
-	std::cout << "\nMaking a new Span with 100000 random numbers." << std::endl;
-	Span bigsp = Span(100000);
-	for (int i = 0; i < 100000; i++)
+	std::cout << "----------\nMaking a new Span with 20000 random numbers." << std::endl;
+	Span bigsp = Span(20000);
+	for (int i = 0; i < 20000; i++)
 		bigsp.addNumber(std::rand());
 	std::cout << "Shortest Span: " << bigsp.shortestSpan() << std::endl;
 	std::cout << "Longest Span: " << bigsp.longestSpan() << std::endl;
@@ -67,18 +67,12 @@ int	main(void)
 	}
 	std::cout << "Adding another number (43)." << std::endl;
 	badsp.addNumber(43);
-	try
-	{
-		std::cout << "Trying to get the shortestSpan and longestSpan..." << std::endl;
-		std::cout << "Shortest Span: " << badsp.shortestSpan() << std::endl;
-		std::cout << "Longest Span: " << badsp.longestSpan() << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	std::cout << "Shortest Span: " << badsp.shortestSpan() << std::endl;
+	std::cout << "Longest Span: " << badsp.longestSpan() << std::endl;
 	std::cout << "Adding another number (100)." << std::endl;
 	badsp.addNumber(100);
+	std::cout << "Shortest Span: " << badsp.shortestSpan() << std::endl;
+	std::cout << "Longest Span: " << badsp.longestSpan() << std::endl;
 	try
 	{
 		std::cout << "Trying to add another number..." << std::endl;
